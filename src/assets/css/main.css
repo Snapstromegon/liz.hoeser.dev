@@ -8,12 +8,13 @@ html {
   background-color: #333;
 }
 
-#Handball::before {
-  background-image: url("/assets/imgs/2024-09-29 TVB Stuttgart - HSG Wetzlar/_TZ68893.jpg");
+#Contact {
+  background-color: #111;
 }
 
-#Unicycling::before {
-  background-image: url("/assets/imgs/2024-09-29 TVB Stuttgart - HSG Wetzlar/_TZ68893.jpg");
+.link-target {
+  position: absolute;
+  top: -15rem;
 }
 
 body {
@@ -92,6 +93,17 @@ body {
       grid-template-areas: "left center right";
       justify-content: space-between;
 
+      .content {
+        padding: 5rem;
+        grid-column: span 2;
+
+        h2,
+        p {
+          margin-top: 1.5em;
+          margin-bottom: 0.5em;
+        }
+      }
+
       &:before {
         content: "";
         position: absolute;
@@ -103,7 +115,7 @@ body {
         background-image: url("/assets/imgs/2024-09-29 TVB Stuttgart - HSG Wetzlar/_TZ68893.jpg");
         background-attachment: fixed;
         background-size: cover;
-        filter: blur(3px) grayscale(1);
+        filter: blur(3px) grayscale(1) brightness(0.5);
         overflow: hidden;
       }
 
@@ -143,7 +155,10 @@ body {
           height: auto;
           object-fit: cover;
           overflow: hidden;
-          border: 1px solid #fff;
+          border: 1px solid #ccc;
+          &:hover {
+            border: 1px solid #fff;
+          }
         }
       }
 
@@ -160,6 +175,7 @@ body {
           grid-template-rows: auto auto 1fr auto auto;
           justify-items: end;
           max-height: 66dvh;
+          position: relative;
           picture {
             img {
               width: 100%;
@@ -173,12 +189,48 @@ body {
 
           & .description {
             color: #fff;
-            background-color: #0008;
+            background-color: #000a;
             grid-row: 4 / 6;
             grid-column: 4 / 6;
             padding: 1rem;
             border: 0.3rem solid #fff;
           }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  body {
+    aside {
+      padding-left: 2rem;
+      h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1rem;
+      }
+    }
+    main {
+      section {
+        grid-template-columns: 1fr auto;
+        grid-template-areas: "center right";
+        gap: 5rem 1rem;
+        padding-left: 2rem;
+        .content {
+          padding: 3rem 0;
+          grid-column: span 1;
+        }
+        aside {
+          display: none;
+        }
+        h1 {
+          font-size: 4rem;
+        }
+        .bigImages .bigImage {
+          display: flex;
+          flex-direction: column;
         }
       }
     }

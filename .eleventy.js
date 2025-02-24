@@ -2,12 +2,33 @@ import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import Image from "@11ty/eleventy-img";
 import { basename, isAbsolute, join, resolve } from "node:path";
 import { mkdir, writeFile } from "node:fs/promises";
-import { bundle } from "lightningcss";
+import { bundle, transform } from "lightningcss";
 
 const lightningcss = (
   eleventyConfig,
   { mapDir = "assets/css", lightningOptions = {} } = {}
 ) => {
+  const visitor = (imageHooks, eleventy) => ({
+    Image: (image) => {
+      const originalUrl = image.value.url;
+      const outputName = `${basename(originalUrl)}.webp`;
+      const outputDir = join(eleventy.directories.output, "assets/images");
+      const outputUrl = join("/assets/images", outputName);
+      imageHooks.push(
+        Image(join(eleventy.directories.input, originalUrl.slice(1)), {
+          widths: [1920],
+          formats: ["webp"],
+          outputDir,
+          filenameFormat: function () {
+            return outputName;
+          },
+        })
+      );
+      image.value.url = outputUrl.replaceAll("\\", "/");
+      return image;
+    },
+  });
+
   eleventyConfig.addShortcode("lightningcss", async function (cssFile) {
     let inputPath = resolve(this.page.inputPath, cssFile);
     if (isAbsolute(cssFile)) {
@@ -18,33 +39,10 @@ const lightningcss = (
       filename: inputPath,
       sourceMap: true,
 
-      visitor: {
-        Image: (image) => {
-          console.log(image);
-          const originalUrl = image.value.url;
-          const outputName = `${basename(originalUrl)}.webp`;
-          const outputDir = join(
-            this.eleventy.directories.output,
-            "assets/images"
-          );
-          const outputUrl = join("/assets/images", outputName);
-          imageHooks.push(
-            Image(join(this.eleventy.directories.input, originalUrl.slice(1)), {
-              widths: [1920],
-              formats: ["webp"],
-              outputDir,
-              filenameFormat: function () {
-                return outputName;
-              },
-            })
-          );
-          image.value.url = outputUrl.replaceAll("\\", "/");
-          return image;
-        },
-      },
+      visitor: visitor(imageHooks, this.eleventy),
       ...lightningOptions,
     });
-    console.log(await Promise.all(imageHooks));
+    await Promise.all(imageHooks);
     const mapPath = join("/", mapDir, `${basename(cssFile)}.map`);
     if (mapDir) {
       await mkdir(join("_site", mapDir), { recursive: true });
@@ -55,6 +53,22 @@ const lightningcss = (
     }
     return `<style>${code}/*# sourceMappingURL=${mapPath.replaceAll("\\", "/")} */</style>`;
   });
+
+  eleventyConfig.addPairedAsyncShortcode(
+    "lcss",
+    async function (css) {
+      const imageHooks = [];
+      const { code } = transform({
+        filename: `${Math.random()}.css`,
+        code: Buffer.from(css),
+        minify: true,
+        visitor: visitor(imageHooks, this.eleventy),
+        ...lightningOptions,
+      });
+      await Promise.all(imageHooks);
+      return code.toString();
+    }
+  );
 };
 
 export default function (eleventyConfig) {

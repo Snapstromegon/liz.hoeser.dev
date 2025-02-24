@@ -1,7 +1,24 @@
 ---
 layout: main.njk
 ---
+
 {%for category in collections.categories%}
-{% set category = category.data%}
-{% include './_includes/snippets/category.njk' %}
+  {% set category = category.data%}
+  <style>
+{% lcss %}
+#{{category.name}}:before {
+  background-image: url("{{category.background}}");
+}
+{% endlcss %}
+</style>
+  {% include './_includes/snippets/category.njk' %}
 {%endfor%}
+
+<section id="Contact">
+  <h1>Contact</h1>
+  <div class="content">
+    <img src="assets/imgs/liz.jpg" alt="Liz Höser" />
+    <h2>Hey, I'm Liz!</h2>
+    <p>You can find me an my photos on <a href="https://www.instagram.com/liz.hoeser/">Instagram</a>.</p>
+  </div>
+</section>

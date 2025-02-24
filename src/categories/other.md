@@ -1,5 +1,5 @@
 ---
-name: Unicycling
+name: Other
 background: "/assets/imgs/2024-09-29 TVB Stuttgart - HSG Wetzlar/_TZ68893.jpg"
 images:
   - src: "/assets/imgs/2024-09-29 TVB Stuttgart - HSG Wetzlar/_TZ68893.jpg"

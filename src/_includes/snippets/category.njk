@@ -1,13 +1,17 @@
+
 <section id="{{category.name}}">
   <h1>{{ category.name }}</h1>
   <aside>
     {%for image in category.images%}
-    <img src="{{ image.src }}" alt="{{ image.title }}" />
+    <a href="#{{category.name}}-{{loop.index0}}">
+      <img src="{{ image.src }}" alt="{{ image.title }}" />
+    </a>
     {% endfor %}
   </aside>
   <div class="bigImages">
     {%for image in category.images%}
     <div class="bigImage">
+      <div class="link-target" id="{{category.name}}-{{loop.index0}}"></div>
       <img src="{{ image.src }}" alt="{{ image.title }}" />
       <div class="description">
         <h2>{{ image.title }}</h2>
