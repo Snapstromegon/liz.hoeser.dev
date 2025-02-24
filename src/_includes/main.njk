@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liz Höser</title>
+    {% lightningcss "/assets/css/main.css" %}
+  </head>
+  <body>
+    <aside>
+      <h1>Liz Höser</h1>
+      <h2>Photography</h2>
+      <nav>
+        <a href="#Handball">Handball</a>
+        <a href="#Unicycling">Unicycling</a>
+        <a href="#Other">Other</a>
+        <a href="#Contact">Contact</a>
+      </nav>
+    </aside>
+    <main>
+      {{content | safe}}
+    </main>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<section id="{{category.name}}">
+  <h1>{{ category.name }}</h1>
+  <aside>
+    {%for image in category.images%}
+    <img src="{{ image.src }}" alt="{{ image.title }}" />
+    {% endfor %}
+  </aside>
+  <div class="bigImages">
+    {%for image in category.images%}
+    <div class="bigImage">
+      <img src="{{ image.src }}" alt="{{ image.title }}" />
+      <div class="description">
+        <h2>{{ image.title }}</h2>
+        <p>{{ image.description }}</p>
+        <p>{{ image.date | niceDate }}</p>
+    </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>

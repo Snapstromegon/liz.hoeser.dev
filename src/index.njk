@@ -1,0 +1,7 @@
+---
+layout: main.njk
+---
+{%for category in collections.categories%}
+{% set category = category.data%}
+{% include './_includes/snippets/category.njk' %}
+{%endfor%}
