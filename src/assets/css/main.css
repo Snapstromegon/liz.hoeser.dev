@@ -6,6 +6,7 @@
 
 html {
   background-color: #333;
+  scroll-behavior: smooth;
 }
 
 #Contact {
