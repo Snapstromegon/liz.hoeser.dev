@@ -74,7 +74,16 @@ const lightningcss = (
 export default function (eleventyConfig) {
   eleventyConfig.addWatchTarget("src/assets/css/**/*.css");
   eleventyConfig.setInputDirectory("src");
-  eleventyConfig.addPlugin(eleventyImageTransformPlugin);
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+    formats: ["avif", "webp", "jpg"],
+    widths: [256, 512, 1024, 2048],
+    htmlOptions: {
+      imgAttributes: {
+        loading: "lazy",
+        sizes: ["256w", "512w", "1024w", "2048w"]
+      }
+    }
+  });
   eleventyConfig.addPlugin(lightningcss);
   eleventyConfig.addFilter("niceDate", (date) => {
     const months = [

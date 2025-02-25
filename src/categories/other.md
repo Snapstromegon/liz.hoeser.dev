@@ -1,5 +1,6 @@
 ---
 name: Other
+date: 2025-02-24
 background: "/assets/imgs/2024-09-29 TVB Stuttgart - HSG Wetzlar/_TZ68893.jpg"
 images:
   - src: "/assets/imgs/2024-09-29 TVB Stuttgart - HSG Wetzlar/_TZ68893.jpg"
