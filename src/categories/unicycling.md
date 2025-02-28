@@ -7,23 +7,23 @@ images:
     title: ROC
     description: Ride One Convention
     date: 2024-11-30
-  - src: "/assets/imgs/einrad/TZ6_4950.jpg"
+  - src: "/assets/imgs/einrad/TZ6_4950.JPG"
     title: UNICON 20
     description: Unicycling World Championschip
     date: 2022-07-31
-  - src: "/assets/imgs/einrad/TZ6_8100.jpg"
+  - src: "/assets/imgs/einrad/TZ6_8100.JPG"
     title: UNICON 20
     description: Unicycling World Championschip
     date: 2022-07-31
-  - src: "/assets/imgs/einrad/TZ6_2370.jpg"
+  - src: "/assets/imgs/einrad/TZ6_2370.JPG"
     title: UNICON 20
     description: Unicycling World Championschip
     date: 2022-07-31
-  - src: "/assets/imgs/einrad/TZ6_4537.jpg"
+  - src: "/assets/imgs/einrad/TZ6_4537.JPG"
     title: UNICON 20
     description: Unicycling World Championschip
     date: 2022-07-31
-  - src: "/assets/imgs/einrad/TZ6_3689.jpg"
+  - src: "/assets/imgs/einrad/TZ6_3689.JPG"
     title: UNICON 20
     description: Unicycling World Championschip
     date: 2022-07-31
