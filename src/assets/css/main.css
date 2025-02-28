@@ -176,6 +176,7 @@ body {
           grid-template-rows: 66dvh;
           grid-template-areas: "main";
           justify-items: end;
+          position: relative;
           & picture {
             grid-area: main;
             img {
