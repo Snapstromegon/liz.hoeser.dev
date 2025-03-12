@@ -14,11 +14,11 @@ images:
   - src: "/assets/imgs/einrad/TZ6_8100.JPG"
     title: UNICON 20
     description: Unicycling World Championschip
-    date: 2022-07-31
+    date: 2022-07-29
   - src: "/assets/imgs/einrad/TZ6_2370.JPG"
     title: UNICON 20
     description: Unicycling World Championschip
-    date: 2022-07-31
+    date: 2022-07-28
   - src: "/assets/imgs/einrad/TZ6_4537.JPG"
     title: UNICON 20
     description: Unicycling World Championschip
@@ -26,5 +26,5 @@ images:
   - src: "/assets/imgs/einrad/TZ6_3689.JPG"
     title: UNICON 20
     description: Unicycling World Championschip
-    date: 2022-07-31
+    date: 2022-07-30
 ---
