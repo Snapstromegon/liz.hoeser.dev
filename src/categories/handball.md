@@ -16,15 +16,15 @@ images:
     description: Frisch Auf! Goeppingen vs. Rhein-Neckar Loewen
     date: 2024-06-25
   - src: "/assets/imgs/handball/_Z6L9007.jpg"
-    title: Daikin HBL
+    title: DAIKIN HBL
     description: TVB Stuttgart vs. TSV Hannover-Burgdorf
     date: 2025-02-13
   - src: "/assets/imgs/handball/_Z6L2952.jpg"
-    title: Daikin HBL
+    title: DAIKIN HBL
     description: TVB Stuttgart vs. FRISCH AUF! Göppingen
     date: 2024-12-05
   - src: "/assets/imgs/handball/_Z6L2836.jpg"
-    title: Daikin HBL
+    title: DAIKIN HBL
     description: TVB Stuttgart vs. FRISCH AUF! Göppingen
     date: 2024-12-05
 ---
