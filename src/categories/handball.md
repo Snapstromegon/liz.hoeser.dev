@@ -17,7 +17,7 @@ images:
     date: 2024-06-25
   - src: "/assets/imgs/handball/_Z6L9007.jpg"
     title: Daikin HBL
-    description: TVB Stuttgart vs. Hannover
+    description: TVB Stuttgart vs. TSV Hannover-Burgdorf
     date: 2025-02-13
   - src: "/assets/imgs/handball/_Z6L2952.jpg"
     title: Daikin HBL
